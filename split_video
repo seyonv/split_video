@@ -1,0 +1,73 @@
+.TH Split_Video 1 "July 2016"
+.SH NAME
+.PP
+split_video
+.SH SYNOPSIS
+.PP
+\fB\fCsplit_video\fR [\fB\fC\-hdsnplard\fR]
+.SH DESCRIPTION
+.PP
+This program is used to download, split and manage videos for viewing. The file/folder structure used is
+.RS
+.IP \(bu 2
+\fBdownloaded\fP:
+.RS
+.IP \(bu 2
+Downloaded stores downloaded files before they are separated into individual sections.
+.RE
+.IP \(bu 2
+\fBto_watch\fP
+.RS
+.IP \(bu 2
+To_watch stores the same files but split up into smaller time segments.
+.RE
+.IP \(bu 2
+\fBwatched\fP
+.RS
+.IP \(bu 2
+After these files are watched they will be automatically transferred to the watched folder so you can seamlessly keep track of the files you've watched.
+.RE
+.IP \(bu 2
+\fBvideos\fIto\fPdownload.txt:\fP
+.RS
+.IP \(bu 2
+This is the file that stores the urls of all the clips to be downloaded
+.RE
+.RE
+.SH OPTIONS
+.PP
+\fB\fC\-h\fR
+    Print this help text and exit
+.PP
+\fB\fC\-d\fR
+    Download all urls in text file \fIvideos\fIto\fPdownload.txt\fP to download folder
+.PP
+\fB\fC\-s\fR \fItime\fIin\fPseconds\fP
+.PP
+Split all download files into smaller files of length time\fIin\fPseconds. If no argument specified, default length of 480 seconds(8 minutes) is used
+.PP
+\fB\fC\-n\fR
+    Play next file in to\-watch folder
+.PP
+\fB\fC\-p\fR
+    Play most recently played file
+.PP
+\fB\fC\-l\fR
+    See list of all files in \fIvideos\fIto\fPdownload.txt\fP along with corresponding titles
+.PP
+\fB\fC\-a\fR \fIurl\fP \fIline_num\fP
+.PP
+.RS
+.nf
+Add url to *videos_to_download.txt* at specified line number. If no line number is specified it is added to the end of the file
+.fi
+.RE
+.PP
+\fB\fC\-r\fR \fIline_num\fP
+    Remove url at given line number. If no line number is specified, the last line of the file is deleted
+.PP
+\fB\fC\-c\fR
+    Delete all urls in \fIvideos\fIto\fPdownload.txt\fP
+.SH AUTHOR
+.PP
+Seyon Vasantharajan(\[la]seyon.vasantharajan@gmail.com\[ra]
