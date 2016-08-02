@@ -1,19 +1,22 @@
-<<<<<<< HEAD
-# makefile should create entire directory structure in this folder along with files. DO NOT CALL IT split_video, want it to ba completely new
+# This version will use DESTDIR but have it be defined at
+# /usr/local/vidtest4
+#
+# Within this directory, contents will be
+# downloaded/, to_watch/, watched/, README.md
 
-
-# THE THINGS THAT WILL CHANGE ARE OUT_DIR and SPLIT_VIDEO_DIR. These absolutely cannot be specified by need to be inferred from the command line and usage with an RPM helps alot too
+#
+# Makefile, videos_to_download.txt, splitting_videos.sh, ffsplit.sh
 # ****************************
 MKDIR_P             = mkdir -p
 TOUCH               = touch
 
 # ****************************
-OUT_DIR             = /Users/seyonvasantharajan/Desktop/makefile_folder/makefile4/vidtest4
+DESTDIR             = /usr/local/vidtest4
 
-DOWNLOADED_DIR      = ${OUT_DIR}/downloaded
-TO_WATCH_DIR        = ${OUT_DIR}/to_watch
-WATCHED_DIR         = ${OUT_DIR}/watched
-README              = ${OUT_DIR}/README.md
+DOWNLOADED_DIR      = ${DESTDIR}/downloaded
+TO_WATCH_DIR        = ${DESTDIR}/to_watch
+WATCHED_DIR         = ${DESTDIR}/watched
+README              = ${DESTDIR}/README.md
 
 # ****************************
 SPLIT_VIDEO_DIR     = /Users/seyonvasantharajan/Desktop/split_video1
@@ -31,10 +34,10 @@ SHAREDIR            = $(PREFIX)/share
 # ****************************
 # Location of files to copy over and install
 
-all: ${OUT_DIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR} install
+all: ${DESTDIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR} install
 
-${OUT_DIR}:
-	${MKDIR_P} ${OUT_DIR}
+${DESTDIR}:
+	${MKDIR_P} ${DESTDIR}
 
 ${DOWNLOADED_DIR}:
 	${MKDIR_P} ${DOWNLOADED_DIR}
@@ -54,33 +57,5 @@ ${README}:
 	touch ${README}
 
 clean:
-	rm -rf ${OUT_DIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
+	rm -rf ${DESTDIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
 	# add removal for BINDIR/Split_Video1 and ffsplit(comment out ffsplit though as it's still being used by me though)
-=======
-# youtube-dl doesn't use mkdir command. see reference to determine if this directory should be included in the "all:" section
-# -Find a reference besides youtube-dl that creates directories(will have a similar strucuture)
-# -How to test makefile? How to test homebrew package
-# -Process for creating homebrew package
-#
-# ----------------------------------------------------
-all:
-
-clean:
-
-# See that DESTDIR is not defined anywhere else. why not? Is this implicit, what does it standfor
-PREFIX ?= /usr/local
-BINDIR ?= /usr/bin
-MANDIR ?= $(PREFIX)/bin
-SHAREDIR ?= $(PREFIX)/share
-
-# look more into SYSCONFDIR. Is this needed to get homebrew installation working?
-
-# look at differences between -d and -m flag. There is a line before the install statements in youtube-dl Makefile. What does this do?
-install:
-
-# Look into tar file meanings as well
-tar:
-
-# look at "youtube-dl:" as reference. this seems to be wear executable is created
-youtube-dl:
->>>>>>> 92a1adb7fdaf8abf224f360c05531b59d28da918
