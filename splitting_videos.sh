@@ -1,7 +1,8 @@
 #!/bin/bash
 # GLOBAL COMMAND:  split_video
 
-top_loc='/Users/seyonvasantharajan/Desktop/videos_for_breaks'
+top_loc='/usr/local/vidtest4'
+# top_loc='/Users/seyonvasantharajan/Desktop/videos_for_breaks'
 
 # modify the below paths to be relative to toploc
 url_file="$top_loc/videos_to_download.txt"

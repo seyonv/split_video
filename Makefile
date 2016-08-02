@@ -17,13 +17,16 @@ DOWNLOADED_DIR      = ${DESTDIR}/downloaded
 TO_WATCH_DIR        = ${DESTDIR}/to_watch
 WATCHED_DIR         = ${DESTDIR}/watched
 README              = ${DESTDIR}/README.md
-
+VIDS_TO_DOWNLOAD    = ${DESTDIR}/videos_to_download.txt
 # ****************************
-SPLIT_VIDEO_DIR     = /Users/seyonvasantharajan/Desktop/split_video1
+SPLIT_VIDEO_DIR     = /usr/local/bin
 
-VIDS_TO_DOWNLOAD    = ${SPLIT_VIDEO_DIR}/videos_to_download.txt
-SPLITTING_VIDEOS_SH = $(SPLIT_VIDEO_DIR)/splitting_videos.sh
-FFSPLIT_SH          = $(SPLIT_VIDEO_DIR)/ffsplit.sh
+
+# Remember that the below two files are binaries. but perhaps this is how these binaries are initialyl created (by accessing the bash files that are at this lcoation. If the latter case is true then it wouldn't be a case of that)
+
+# if methoed being used is binaries to be curled directly than the below is actually useless
+# SPLITTING_VIDEOS_SH = $(SPLIT_VIDEO_DIR)/splitting_videos.sh
+# FFSPLIT_SH          = $(SPLIT_VIDEO_DIR)/ffsplit.sh
 
 # ****************************
 PREFIX              = /usr/local
@@ -34,7 +37,8 @@ SHAREDIR            = $(PREFIX)/share
 # ****************************
 # Location of files to copy over and install
 
-all: ${DESTDIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR} install
+# install command has been removed
+all: ${DESTDIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
 
 ${DESTDIR}:
 	${MKDIR_P} ${DESTDIR}
