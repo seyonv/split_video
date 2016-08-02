@@ -10,6 +10,7 @@ DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
 TO_WATCH_DIR        = ${DEST_DIR}/to_watch
 WATCHED_DIR         = ${DEST_DIR}/watched
 VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
+
 # ****************************
 SPLIT_VIDEO_DIR     = /usr/local/bin
 BINARY_NAME 				= split_video1

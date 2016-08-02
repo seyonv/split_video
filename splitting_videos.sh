@@ -2,20 +2,14 @@
 
 dest_dir='/usr/local/split_video_dir'
 
-# modify the below paths to be relative to toploc
 url_file="$dest_dir/videos_to_download.txt"
 download_loc="$dest_dir/downloaded"
 move_to_loc="$dest_dir/to_watch"
 watched_loc="$dest_dir/watched"
 
-# DELETE THIS LINE AFTER INTERNET
-test_file="https://www.youtube.com/watch?v=JUMfvB5BjKI"
-
-# may need to modify this to work on one file at a time, [remove the -a parameter]
-# What is the last parameter($test_file) doing here?
 download_videos(){
   cd $download_loc
-  youtube-dl -a $url_file -o "%(title)s" $test_file
+  youtube-dl -a $url_file -o "%(title)s"
 }
 
 split_this_video(){
