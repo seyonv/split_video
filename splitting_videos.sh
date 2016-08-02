@@ -1,20 +1,15 @@
 #!/bin/bash
-# GLOBAL COMMAND:  split_video
 
-top_loc='/usr/local/vidtest4'
-# top_loc='/Users/seyonvasantharajan/Desktop/videos_for_breaks'
+dest_dir='/usr/local/split_video_dir'
 
 # modify the below paths to be relative to toploc
-url_file="$top_loc/videos_to_download.txt"
-download_loc="$top_loc/downloaded"
-move_to_loc="$top_loc/to_watch"
-watched_loc="$top_loc/watched"
+url_file="$dest_dir/videos_to_download.txt"
+download_loc="$dest_dir/downloaded"
+move_to_loc="$dest_dir/to_watch"
+watched_loc="$dest_dir/watched"
 
 # DELETE THIS LINE AFTER INTERNET
 test_file="https://www.youtube.com/watch?v=JUMfvB5BjKI"
-
-
-
 
 # may need to modify this to work on one file at a time, [remove the -a parameter]
 # What is the last parameter($test_file) doing here?
@@ -79,7 +74,7 @@ display_urls(){
 
 # takes one parameter which is the url
 add_url(){
-  cd $top_loc
+  cd $dest_dir
   if [ $# -eq 0 ]; then
     echo "error need at least 1 argument [the url to add] and optionally 1 more [what line number to add it] "
     exit 1
@@ -93,7 +88,7 @@ add_url(){
 }
 
 remove_url(){
-  cd $top_loc
+  cd $dest_dir
   if [ $# -eq 0 ]; then
     gsed -i '$ d' "$url_file"
   fi
@@ -103,7 +98,7 @@ remove_url(){
 }
 
 clear_all_urls(){
-  cd $top_loc
+  cd $dest_dir
   > $url_file
 }
 

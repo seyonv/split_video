@@ -1,32 +1,21 @@
-# This version will use DESTDIR but have it be defined at
-# /usr/local/vidtest4
-#
-# Within this directory, contents will be
-# downloaded/, to_watch/, watched/, README.md
+# make all must be run for these files
 
-#
-# Makefile, videos_to_download.txt, splitting_videos.sh, ffsplit.sh
-# ****************************
 MKDIR_P             = mkdir -p
 TOUCH               = touch
 
 # ****************************
-DESTDIR             = /usr/local/vidtest4
+DEST_DIR             = /usr/local/split_video_dir
 
-DOWNLOADED_DIR      = ${DESTDIR}/downloaded
-TO_WATCH_DIR        = ${DESTDIR}/to_watch
-WATCHED_DIR         = ${DESTDIR}/watched
-README              = ${DESTDIR}/README.md
-VIDS_TO_DOWNLOAD    = ${DESTDIR}/videos_to_download.txt
+DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
+TO_WATCH_DIR        = ${DEST_DIR}/to_watch
+WATCHED_DIR         = ${DEST_DIR}/watched
+VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
 # ****************************
 SPLIT_VIDEO_DIR     = /usr/local/bin
+BINARY_NAME 				= split_video1
 
-
-# Remember that the below two files are binaries. but perhaps this is how these binaries are initialyl created (by accessing the bash files that are at this lcoation. If the latter case is true then it wouldn't be a case of that)
-
-# if methoed being used is binaries to be curled directly than the below is actually useless
-# SPLITTING_VIDEOS_SH = $(SPLIT_VIDEO_DIR)/splitting_videos.sh
-# FFSPLIT_SH          = $(SPLIT_VIDEO_DIR)/ffsplit.sh
+SPLITTING_VIDEOS_SH = $(pwd)/splitting_videos.sh
+FFSPLIT_SH          = $(pwd)/ffsplit.sh
 
 # ****************************
 PREFIX              = /usr/local
@@ -35,31 +24,21 @@ MANDIR              = $(PREFIX)/man
 SHAREDIR            = $(PREFIX)/share
 
 # ****************************
-# Location of files to copy over and install
+all: create_directories create_vids_to_download_txt install
 
-# install command has been removed
-all: ${DESTDIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
-
-${DESTDIR}:
-	${MKDIR_P} ${DESTDIR}
-
-${DOWNLOADED_DIR}:
+create_directories:
+	${MKDIR_P} ${DEST_DIR}
 	${MKDIR_P} ${DOWNLOADED_DIR}
-
-${TO_WATCH_DIR}:
 	${MKDIR_P} ${TO_WATCH_DIR}
-
-${WATCHED_DIR}:
 	${MKDIR_P} ${WATCHED_DIR}
 
+create_vids_to_download_txt:
+	touch $(VIDS_TO_DOWNLOAD)
+
 install:
-	# verify that ffsplit is accessible. Likely will need to merge it into the same bashfile (better to )
-	install $(SPLITTING_VIDEOS_SH) $(BINDIR)/split_video1
+	install $(SPLITTING_VIDEOS_SH) $(BINDIR)/$(BINARY_NAME)
 	install $(FFSPLIT_SH) $(BINDIR)/ff_split
 
-${README}:
-	touch ${README}
-
 clean:
-	rm -rf ${DESTDIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
+	rm -rf ${DEST_DIR}
 	# add removal for BINDIR/Split_Video1 and ffsplit(comment out ffsplit though as it's still being used by me though)
