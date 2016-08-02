@@ -7,7 +7,7 @@
 
 # ==============================
 
-# modify thsi file
+# modify this file
 function usage {
         echo "Usage : ffsplit.sh input.file chunk-duration [output-filename-format]"
         echo -e "\t - input file may be any kind of file reconginzed by ffmpeg"
