@@ -15,8 +15,10 @@ VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
 SPLIT_VIDEO_DIR     = /usr/local/bin
 BINARY_NAME 				= split_video1
 
-SPLITTING_VIDEOS_SH = $(pwd)/splitting_videos.sh
-FFSPLIT_SH          = $(pwd)/ffsplit.sh
+# SPLITTING_VIDEOS_SH = $(pwd)/splitting_videos.sh
+# FFSPLIT_SH          = $(pwd)/ffsplit.sh
+SPLITTING_VIDEOS_SH = splitting_videos.sh
+FFSPLIT_SH          = ffsplit.sh
 
 # ****************************
 PREFIX              = /usr/local
