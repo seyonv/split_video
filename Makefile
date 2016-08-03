@@ -48,4 +48,6 @@ install:
 
 clean:
 	rm -rf ${DEST_DIR}
+	rm $(BINDIR)/$(BINARY_NAME)
+	rm $(BINDIR)/ff_split
 	# add removal for BINDIR/Split_Video1 and ffsplit(comment out ffsplit though as it's still being used by me though)

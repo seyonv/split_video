@@ -60,10 +60,15 @@ play_next(){
 display_urls(){
   count=0
   while read f; do
-    echo "$f"
-    title=$(wget -q $f -O - | grep \<title\>| sed "s/\<title\>\([^<]*\).*/\1/")
-    echo "$count - $title - $f"
-    ((count++))
+    # check if the line is blank. If so, skip it and don't do anything
+    if [ -n $f ]; then
+      printf "statement false \n"
+      title=$(wget -q $f -O - | grep \<title\>| sed "s/\<title\>\([^<]*\).*/\1/")
+      printf "$count - $title - $f \n"
+      ((count++))
+    fi
+
+
   done < $url_file
 }
 
@@ -75,8 +80,10 @@ add_url(){
     exit 1
   fi
   if [ $# -eq 1 ]; then
-    echo -ne "\n$1" >> "$url_file"
+    echo -ne "$1\n" >> "$url_file"
   fi
+  # might need to modify the gsed used here to insert in the correct line
+  # number. Want to make sure the last line is always a newline
   if [ $# -eq 2 ]; then
     gsed -i "$2i $1" "$url_file"
   fi
@@ -98,7 +105,6 @@ clear_all_urls(){
 }
 
 show_help() {
-  # this should literally print the man page
   echo "help man manpage will be soon put here"
 }
 
