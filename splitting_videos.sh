@@ -82,16 +82,9 @@ add_url(){
   if [ $# -eq 1 ]; then
     echo -ne "$1\n" >> "$url_file"
   fi
-  # might need to modify the gsed used here to insert in the correct line
-  # number. Want to make sure the last line is always a newline
   if [ $# -eq 2 ]; then
-    $lin=$2
-    if [ "$2" -gt 0]; then
-      $lin=`expr $2 - 1`
-    else
-      $lin=`expr $lin1 - 1`
-    fi
-    gsed -i "$lini $1" "$url_file"
+    #ERROR: currently this is inserting line one too high(position 2 instedad of position 2)
+    gsed -i "$2i $1" "$url_file"
   fi
 }
 
