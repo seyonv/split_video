@@ -7,6 +7,7 @@ USAGE
 ------
 The global command to run is $split_video1
 
+<!-- insert code syntax below  -->
 run $man split_video1
 to see the manual page installed for split_video1 and individual usage examples.
 

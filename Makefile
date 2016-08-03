@@ -39,6 +39,10 @@ create_vids_to_download_txt:
 install:
 	install $(SPLITTING_VIDEOS_SH) $(BINDIR)/$(BINARY_NAME)
 	install $(FFSPLIT_SH) $(BINDIR)/ff_split
+	# install man page
+	# install 	/usr/share/man/man1/split_video.1
+
+
 
 clean:
 	rm -rf ${DEST_DIR}
