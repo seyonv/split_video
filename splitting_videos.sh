@@ -83,8 +83,7 @@ add_url(){
     echo -ne "$1\n" >> "$url_file"
   fi
   if [ $# -eq 2 ]; then
-    #ERROR: currently this is inserting line one too high(position 2 instedad of position 2)
-    gsed -i "$2i $1" "$url_file"
+    gsed -i "$(($2+1))i $1" "$url_file"
   fi
 }
 
