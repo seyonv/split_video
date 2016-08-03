@@ -60,6 +60,7 @@ play_next(){
 display_urls(){
   count=0
   while read f; do
+    echo "$f"
     title=$(wget -q $f -O - | grep \<title\>| sed "s/\<title\>\([^<]*\).*/\1/")
     echo "$count - $title - $f"
     ((count++))
@@ -98,7 +99,7 @@ clear_all_urls(){
 
 show_help() {
   # this should literally print the man page
-  echo "help man page will be soon put here"
+  echo "help man manpage will be soon put here"
 }
 
 
