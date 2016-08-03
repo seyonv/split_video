@@ -62,7 +62,6 @@ display_urls(){
   while read f; do
     # check if the line is blank. If so, skip it and don't do anything
     if [ -n $f ]; then
-      printf "statement false \n"
       title=$(wget -q $f -O - | grep \<title\>| sed "s/\<title\>\([^<]*\).*/\1/")
       printf "$count - $title - $f \n"
       ((count++))
@@ -72,7 +71,8 @@ display_urls(){
   done < $url_file
 }
 
-# takes one parameter which is the url
+# params (url,line_num[optional param])
+# this function should either take 1 or 2 arugments
 add_url(){
   cd $dest_dir
   if [ $# -eq 0 ]; then
@@ -85,7 +85,13 @@ add_url(){
   # might need to modify the gsed used here to insert in the correct line
   # number. Want to make sure the last line is always a newline
   if [ $# -eq 2 ]; then
-    gsed -i "$2i $1" "$url_file"
+    $lin=$2
+    if [ "$2" -gt 0]; then
+      $lin=`expr $2 - 1`
+    else
+      $lin=`expr $lin1 - 1`
+    fi
+    gsed -i "$lini $1" "$url_file"
   fi
 }
 
@@ -111,6 +117,7 @@ show_help() {
 
 while getopts ":h :d :s :n :p :l :a: :r :d" opt; do
   # echo $@
+  # when calling add_url want to be able to either have 1 or 2 optional parameters passed
   case $opt in
     h) show_help ;;
     d) download_videos ;;
@@ -118,7 +125,9 @@ while getopts ":h :d :s :n :p :l :a: :r :d" opt; do
     n) play_next ;;
     p) play_previous ;;
     l) display_urls ;;
-    a) add_url $2;; #add args url, line_num
+    a) if [ "$#" -eq 3 ]; then add_url $2 $3 #add args url, line_num
+       else add_url $2;
+       fi ;;
     r) remove_url ;; #add line_num
     d) clear_all_urls ;;
   esac

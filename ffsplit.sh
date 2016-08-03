@@ -43,11 +43,6 @@ fi
 if [ -z "$OUT_FILE_FORMAT" ] ; then
         # Look for every part of the string before the period, this is the name. Every part after the period is the
 
-        # Original Sed expressions used(not working)
-        # FILE_NAME=$(echo "$IN_FILE" | sed 's/^\(.*\)\.[a-zA-Z0-9]\+$/\1/')
-        # FILE_EXT=$(echo "$IN_FILE" | sed 's/^.*\.\([a-zA-Z0-9]\+\)$/\1/')
-
-        #
         FILE_NAME=$(echo "$IN_FILE" | sed 's/\([a-z A-Z0-9_]*\).[a-zA-Z0-9 ]*/\1/')
         FILE_EXT=$(echo "$IN_FILE" | sed 's/[a-z A-Z0-9_]*\.\([a-zA-Z0-9 ]*\)/\1/')
 
