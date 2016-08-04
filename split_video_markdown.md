@@ -13,10 +13,10 @@ DESCRIPTION
 --------------
 This program is used to download, split and manage videos for viewing. The file/folder structure used is
 
-* **downloaded**: 
+* **downloaded**:
 	* Downloaded stores downloaded files before they are separated into individual sections.
 * **to_watch**
-	* To_watch stores the same files but split up into smaller time segments. 
+	* To_watch stores the same files but split up into smaller time segments.
 * **watched**
 	*  After these files are watched they will be automatically transferred to the watched folder so you can seamlessly keep track of the files you've watched.
 * **videos_to_download.txt:**
@@ -27,7 +27,7 @@ This program is used to download, split and manage videos for viewing. The file/
 OPTIONS
 ---------
 `-h`
-  	Print this help text and exit
+  	Print the help page
 
 `-d`
 	Download all urls in text file *videos_to_download.txt* to download folder
@@ -52,7 +52,7 @@ Split all download files into smaller files of length time_in_seconds. If no arg
 `-r` *line_num*
 	Remove url at given line number. If no line number is specified, the last line of the file is deleted
 
-`-c` 
+`-c`
 	Delete all urls in *videos_to_download.txt*
 
 AUTHOR
