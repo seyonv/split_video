@@ -1,4 +1,11 @@
 <!-- Add a table of contents to navigate between sections here -->
+- [INSTALLATION](#installation)
+- [DESCRIPTION](#description)
+- [USAGE](#usage)
+- [OPTIONS](#options)
+- [DEPENDENCIES](#dependencies)
+- [AUTHOR](#author)
+
 INSTALLATION
 ------
 1. Download repository
@@ -107,4 +114,4 @@ AUTHOR
 ---------
 Seyon Vasantharajan(seyon.vasantharajan@gmail.com)
 
-Credit to Alexis Bezverkhyy <alexis@grapsus.net> for ffsplit.sh, which I only only made minimal modifications to his original
+Credit to Alexis Bezverkhyy <alexis@grapsus.net> for ffsplit.sh, which I only only made minimal modifications to
