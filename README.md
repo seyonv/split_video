@@ -1,3 +1,4 @@
+<!-- Add a table of contents to navigate between sections here -->
 INSTALLATION
 ------
 1. Download repository
@@ -17,13 +18,16 @@ By default, the parent directory, split_video_dir, is stored at /usr/local.
 The file/folder structure used is
 
 * **downloaded**:
-  * Downloaded stores downloaded files before they are separated into individual sections.
+  Downloaded stores downloaded files before they are separated into individual sections.
+
 * **to_watch**
-  * To_watch stores the same files but split up into smaller time segments.
+  To_watch stores the same files but split up into smaller time segments.
+
 * **watched**
-  *  After these files are watched they will be automatically transferred to the watched folder so you can seamlessly keep track of the files you've watched.
+  *After these files are watched they will be automatically transferred to the watched folder so you can seamlessly keep track of the files you've watched.
+
 * **videos_to_download.txt:**
-  * This is the file that stores the urls of all the clips to be downloaded
+  This is the file that stores the urls of all the clips to be downloaded
 
 
 USAGE
@@ -90,8 +94,10 @@ Split all download files into smaller files of length time_in_seconds. If no arg
 
 DEPENDENCIES
 ---------
-
+The key dependency is [youtube-dl](https://github.com/rg3/youtube-dl)
 
 AUTHOR
 ---------
 Seyon Vasantharajan(seyon.vasantharajan@gmail.com)
+
+Credit to Alexis Bezverkhyy <alexis@grapsus.net> for ffsplit.sh, which I only only made minimal modifications to his original
