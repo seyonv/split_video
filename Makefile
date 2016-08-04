@@ -4,7 +4,7 @@ MKDIR_P             = mkdir -p
 TOUCH               = touch
 
 # ****************************
-DEST_DIR             = /usr/local/split_video_dir
+DEST_DIR             = /usr/local/cellar/split_video
 
 DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
 TO_WATCH_DIR        = ${DEST_DIR}/to_watch
@@ -12,7 +12,7 @@ WATCHED_DIR         = ${DEST_DIR}/watched
 VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
 
 # ****************************
-SPLIT_VIDEO_DIR     = /usr/local/bin
+SPLIT_VIDEO_DIR     = /usr/local/cellar/split_video/bin
 BINARY_NAME 				= split_video1
 MANPAGE_NAME				= split_video1.1
 # SPLITTING_VIDEOS_SH = $(pwd)/splitting_videos.sh
@@ -21,7 +21,7 @@ SPLITTING_VIDEOS_SH = splitting_videos.sh
 FFSPLIT_SH          = ffsplit.sh
 
 # ****************************
-PREFIX              = /usr/local
+PREFIX              = /usr/local/cellar/split_video
 BINDIR              = $(PREFIX)/bin
 MANDIR              = $(PREFIX)/share/man/man1
 SHAREDIR            = $(PREFIX)/share
