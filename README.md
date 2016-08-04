@@ -12,21 +12,24 @@ DESCRIPTION
 --------------
 This program is used to download, split and manage videos for viewing.
 
-By default, the parent directory, split_video_dir, is stored at /usr/local.
+By default, the parent directory, split_video_dir, is stored at **/usr/local**.
 
 
 The file/folder structure used is
 
-* **downloaded**:
+* **downloaded/**:
+
   Downloaded stores downloaded files before they are separated into individual sections.
 
-* **to_watch**
+* **to_watch/**
   To_watch stores the same files but split up into smaller time segments.
 
-* **watched**
-  *After these files are watched they will be automatically transferred to the watched folder so you can seamlessly keep track of the files you've watched.
+* **watched/**
+
+  After these files are watched they will be automatically transferred to the watched folder so you can seamlessly keep track of the files you've watched.
 
 * **videos_to_download.txt:**
+
   This is the file that stores the urls of all the clips to be downloaded
 
 
@@ -41,21 +44,25 @@ By itself this won't do anything. You must used various flags. The 4 most import
 **Downloading:**
 
 This will download .mp4 files for every URL listed in videos_to_download.txt
+
     $split_video1 -d
 
 **Adding URL:**
 
 This will add a new URL to videos_to_download.txt.
+
     $split_video1 -a URL
 
 **Splitting Downloaded Videos into smaller segments**
 
 This will separate every downloaded file into smaller video segments
+
     $split_video1 -a SECONDS
 
 **Play next video**
 
 This will play the next video in the to_watch folder
+
     $split_video1 -n
 
 
