@@ -5,7 +5,7 @@
 - [OPTIONS](#options)
 - [DEPENDENCIES](#dependencies)
 - [AUTHOR](#author)
-
+g
 INSTALLATION
 ------
 1. Download repository
@@ -71,7 +71,6 @@ This will separate every downloaded file into smaller video segments
 This will play the next video in the to_watch folder
 
     $split_video1 -n
-
 
 
 OPTIONS
