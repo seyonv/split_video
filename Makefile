@@ -1,4 +1,4 @@
-# this implemetnation tests creation in Cellar
+# this implementation tests creation in Cellar
 
 MKDIR_P             = mkdir -p
 TOUCH               = touch
@@ -23,9 +23,9 @@ SPLITTING_VIDEOS_SH = splitting_videos.sh
 FFSPLIT_SH          = ffsplit.sh
 
 # ****************************
-all: create_directories create_vids_to_download_txt
+all: create_directories_and_file
 
-create_directories:
+create_directories_and_file:
 	${MKDIR_P} ${DEST_DIR}
 	${MKDIR_P} ${BINDIR}
 	${MKDIR_P} ${LIBDIR}
