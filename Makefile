@@ -1,4 +1,4 @@
-# make all must be run for these files
+# this implemetnation tests creation in Cellar
 
 MKDIR_P             = mkdir -p
 TOUCH               = touch
