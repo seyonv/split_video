@@ -40,8 +40,6 @@ install:
 	install $(FFSPLIT_SH) $(BINDIR)/ff_split
 	# sudo cp split_video /usr/share/man/man1/split_video.1
 	install $(MANPAGE_NAME) $(MANDIR)/$(MANPAGE_NAME)
-	# install man page
-	# install 	/usr/share/man/man1/split_video.1
 
 clean:
 	rm -rf ${DEST_DIR}
