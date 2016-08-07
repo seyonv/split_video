@@ -33,8 +33,6 @@ create_directories:
 	${MKDIR_P} ${DOWNLOADED_DIR}
 	${MKDIR_P} ${TO_WATCH_DIR}
 	${MKDIR_P} ${WATCHED_DIR}
-
-create_vids_to_download_txt:
 	touch $(VIDS_TO_DOWNLOAD)
 
 install:
