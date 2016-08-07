@@ -6,10 +6,15 @@ TOUCH               = touch
 # ****************************
 DEST_DIR             = /usr/local/cellar/split_video
 
-DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
-TO_WATCH_DIR        = ${DEST_DIR}/to_watch
-WATCHED_DIR         = ${DEST_DIR}/watched
-VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
+# ****************************
+BINDIR              = $(DEST_DIR)/bin
+MANDIR              = $(DEST_DIR)/share/man/man1
+LIBDIR							= ${DEST_DIR}/lib
+
+DOWNLOADED_DIR      = ${LIBDIR}/downloaded
+TO_WATCH_DIR        = ${LIBDIR}/to_watch
+WATCHED_DIR         = ${LIBDIR}/watched
+VIDS_TO_DOWNLOAD    = ${LIBDIR}/videos_to_download.txt
 
 # ****************************
 BINARY_NAME 				= split_video1
@@ -18,19 +23,16 @@ SPLITTING_VIDEOS_SH = splitting_videos.sh
 FFSPLIT_SH          = ffsplit.sh
 
 # ****************************
-BINDIR              = $(DEST_DIR)/bin
-MANDIR              = $(DEST_DIR)/share/man/man1
-
-# ****************************
-all: create_directories create_vids_to_download_txt install
+all: create_directories create_vids_to_download_txt
 
 create_directories:
 	${MKDIR_P} ${DEST_DIR}
+	${MKDIR_P} ${BINDIR}
+	${MKDIR_P} ${LIBDIR}
+	${MKDIR_P} ${MANDIR}
 	${MKDIR_P} ${DOWNLOADED_DIR}
 	${MKDIR_P} ${TO_WATCH_DIR}
 	${MKDIR_P} ${WATCHED_DIR}
-	${MKDIR_P} ${BINDIR}
-	${MKDIR_P} ${MANDIR}
 
 create_vids_to_download_txt:
 	touch $(VIDS_TO_DOWNLOAD)
@@ -45,6 +47,3 @@ install:
 
 clean:
 	rm -rf ${DEST_DIR}
-	rm $(BINDIR)/$(BINARY_NAME)
-	rm $(BINDIR)/ff_split
-	rm $(MANDIR)/$(MANPAGE_NAME)
