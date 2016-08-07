@@ -1,5 +1,3 @@
-# make all must be run for these files
-
 MKDIR_P             = mkdir -p
 TOUCH               = touch
 
@@ -15,8 +13,6 @@ VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
 SPLIT_VIDEO_DIR     = /usr/local/bin
 BINARY_NAME 				= split_video1
 MANPAGE_NAME				= split_video1.1
-# SPLITTING_VIDEOS_SH = $(pwd)/splitting_videos.sh
-# FFSPLIT_SH          = $(pwd)/ffsplit.sh
 SPLITTING_VIDEOS_SH = splitting_videos.sh
 FFSPLIT_SH          = ffsplit.sh
 
