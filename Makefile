@@ -5,9 +5,12 @@ TOUCH               = touch
 
 # ****************************
 DEST_DIR             = /usr/local/cellar/split_video
+LOCAl_DIR     			 = /usr/local
 
 # ****************************
-BINDIR              = $(DEST_DIR)/bin
+# MODIFY BIN DIR TO ACTUALLY BE AT /usr/local/bin instead of at /usr/local/cellar
+
+BINDIR              = $(LOCAl_DIR)/bin
 MANDIR              = $(DEST_DIR)/share/man/man1
 LIBDIR							= ${DEST_DIR}/lib
 
@@ -17,13 +20,14 @@ WATCHED_DIR         = ${LIBDIR}/watched
 VIDS_TO_DOWNLOAD    = ${LIBDIR}/videos_to_download.txt
 
 # ****************************
-BINARY_NAME 				= split_video1
-MANPAGE_NAME				= split_video1.1
 SPLITTING_VIDEOS_SH = splitting_videos.sh
+SPLIT_VIDEO_BINARY	= split_video1
+MANPAGE_NAME				= split_video1.1
 FFSPLIT_SH          = ffsplit.sh
+FFSPLIT_BINARY			=	ff
 
 # ****************************
-all: create_directories_and_file
+all: create_directories_and_file install
 
 create_directories_and_file:
 	${MKDIR_P} ${DEST_DIR}
@@ -36,10 +40,10 @@ create_directories_and_file:
 	touch $(VIDS_TO_DOWNLOAD)
 
 install:
-	install $(SPLITTING_VIDEOS_SH) $(BINDIR)/$(BINARY_NAME)
-	install $(FFSPLIT_SH) $(BINDIR)/ff_split
-	# sudo cp split_video /usr/share/man/man1/split_video.1
-	install $(MANPAGE_NAME) $(MANDIR)/$(MANPAGE_NAME)
+	install $(SPLITTING_VIDEOS_SH) $(BINDIR)/$(SPLIT_VIDEO_BINARY)
+	install $(FFSPLIT_SH) $(BINDIR)/${FFSPLIT_BINARY}
 
+	# add installation for manpage after bash scripts
 clean:
 	rm -rf ${DEST_DIR}
+	rm -rf ${BINDIR}/${BINARY_NAME}
