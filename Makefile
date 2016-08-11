@@ -7,7 +7,7 @@ DEST_DIR             = /usr/local/video_queue_dir
 DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
 TO_WATCH_DIR        = ${DEST_DIR}/to_watch
 WATCHED_DIR         = ${DEST_DIR}/watched
-create_vids_to_download_txt    = ${DEST_DIR}/videos_to_download.txt
+VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
 
 # ****************************
 video_queue_DIR     = /usr/local/bin
@@ -20,18 +20,15 @@ FFSPLIT_SH          = ffsplit.sh
 PREFIX              = /usr/local
 BINDIR              = $(PREFIX)/bin
 MANDIR              = $(PREFIX)/share/man/man1
-SHAREDIR            = $(PREFIX)/share
 
 # ****************************
-all: create_directories create_vids_to_download_txt install
+all: create_directories install
 
 create_directories:
 	${MKDIR_P} ${DEST_DIR}
 	${MKDIR_P} ${DOWNLOADED_DIR}
 	${MKDIR_P} ${TO_WATCH_DIR}
 	${MKDIR_P} ${WATCHED_DIR}
-
-create_vids_to_download_txt:
 	touch $(VIDS_TO_DOWNLOAD)
 
 install:
