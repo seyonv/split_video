@@ -5,7 +5,8 @@
 - [OPTIONS](#options)
 - [DEPENDENCIES](#dependencies)
 - [AUTHOR](#author)
-g
+
+
 INSTALLATION
 ------
 1. Download repository
