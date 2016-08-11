@@ -2,17 +2,17 @@ MKDIR_P             = mkdir -p
 TOUCH               = touch
 
 # ****************************
-DEST_DIR             = /usr/local/split_video_dir
+DEST_DIR             = /usr/local/video_queue_dir
 
 DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
 TO_WATCH_DIR        = ${DEST_DIR}/to_watch
 WATCHED_DIR         = ${DEST_DIR}/watched
-VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
+create_vids_to_download_txt    = ${DEST_DIR}/videos_to_download.txt
 
 # ****************************
-SPLIT_VIDEO_DIR     = /usr/local/bin
-BINARY_NAME 				= split_video1
-MANPAGE_NAME				= split_video1.1
+video_queue_DIR     = /usr/local/bin
+BINARY_NAME 				= video_queue1
+MANPAGE_NAME				= video_queue1.1
 SPLITTING_VIDEOS_SH = splitting_videos.sh
 FFSPLIT_SH          = ffsplit.sh
 
@@ -37,10 +37,10 @@ create_vids_to_download_txt:
 install:
 	install $(SPLITTING_VIDEOS_SH) $(BINDIR)/$(BINARY_NAME)
 	install $(FFSPLIT_SH) $(BINDIR)/ff_split
-	# sudo cp split_video /usr/share/man/man1/split_video.1
+	# sudo cp video_queue /usr/share/man/man1/video_queue.1
 	install $(MANPAGE_NAME) $(MANDIR)/$(MANPAGE_NAME)
 	# install man page
-	# install 	/usr/share/man/man1/split_video.1
+	# install 	/usr/share/man/man1/video_queue.1
 
 clean:
 	rm -rf ${DEST_DIR}

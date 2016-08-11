@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dest_dir='/usr/local/split_video_dir'
+dest_dir='/usr/local/video_queue_dir'
 
 url_file="$dest_dir/videos_to_download.txt"
 download_loc="$dest_dir/downloaded"

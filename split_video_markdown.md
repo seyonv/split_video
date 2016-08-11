@@ -1,13 +1,13 @@
-Split_Video 1 "July 2016"
+video_queue 1 "July 2016"
 ======================
 
 NAME
 ------
-split_video
+video_queue
 
 SYNOPSIS
 ----------
-`split_video` [`-hdsnplard`]
+`video_queue` [`-hdsnplard`]
 
 DESCRIPTION
 --------------

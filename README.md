@@ -19,7 +19,7 @@ DESCRIPTION
 --------------
 This program is used to download, split and manage videos for viewing.
 
-By default, the parent directory, split_video_dir, is stored at **/usr/local**.
+By default, the parent directory, video_queue_dir, is stored at **/usr/local**.
 
 
 The file/folder structure used is
@@ -44,7 +44,7 @@ USAGE
 ------
 The global command to run program is
 
-    $split_video1
+    $video_queue1
 
 By itself this won't do anything. You must used various flags. The 4 most important commands can be seen right below and all options/flags can be seen further down.
 
@@ -52,25 +52,25 @@ By itself this won't do anything. You must used various flags. The 4 most import
 
 This will download .mp4 files for every URL listed in videos_to_download.txt
 
-    $split_video1 -d
+    $video_queue1 -d
 
 **Adding URL:**
 
 This will add a new URL to videos_to_download.txt.
 
-    $split_video1 -a URL
+    $video_queue1 -a URL
 
 **Splitting Downloaded Videos into smaller segments**
 
 This will separate every downloaded file into smaller video segments
 
-    $split_video1 -a SECONDS
+    $video_queue1 -a SECONDS
 
 **Play next video**
 
 This will play the next video in the to_watch folder
 
-    $split_video1 -n
+    $video_queue1 -n
 
 
 OPTIONS
