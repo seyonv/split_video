@@ -1,8 +1,13 @@
+# #{prefix} stores /usr/local/Cellar/video_queue/1.0.8
+# modify makefile so that the directories are now stored there instead. don't want to explicitly specify version but have it automatically inferred via prefix
+
 MKDIR_P             = mkdir -p
 TOUCH               = touch
 
 # *****************************
-DEST_DIR             = /usr/local/video_queue_dir
+# replace dest_dir with
+DEST_DIR            = ${PREFIX}/video_queue_dir
+# DEST_DIR            = /usr/local/video_queue_dir
 
 DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
 TO_WATCH_DIR        = ${DEST_DIR}/to_watch
@@ -17,9 +22,9 @@ SPLITTING_VIDEOS_SH = splitting_videos.sh
 FFSPLIT_SH          = ffsplit.sh
 
 # ****************************
-PREFIX              = /usr/local
-BINDIR              = $(PREFIX)/bin
-MANDIR              = $(PREFIX)/share/man/man1
+LOCAL               = /usr/local
+BINDIR              = $(LOCAL)/bin
+MANDIR              = $(LOCAL)/share/man/man1
 
 # ****************************
 all: create_directories install
