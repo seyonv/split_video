@@ -4,7 +4,7 @@
 MKDIR_P             = mkdir -p
 TOUCH               = touch
 
-# *****************************
+# ****************************
 DEST_DIR             = /usr/local/video_queue_dir
 
 DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
