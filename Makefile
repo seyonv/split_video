@@ -5,9 +5,7 @@ MKDIR_P             = mkdir -p
 TOUCH               = touch
 
 # *****************************
-# replace dest_dir with
-DEST_DIR            = ${PREFIX}/video_queue_dir
-# DEST_DIR            = /usr/local/video_queue_dir
+DEST_DIR             = /usr/local/video_queue_dir
 
 DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
 TO_WATCH_DIR        = ${DEST_DIR}/to_watch
@@ -22,7 +20,7 @@ SPLITTING_VIDEOS_SH = splitting_videos.sh
 FFSPLIT_SH          = ffsplit.sh
 
 # ****************************
-LOCAL               = /usr/local
+LOCAL              = /usr/local
 BINDIR              = $(LOCAL)/bin
 MANDIR              = $(LOCAL)/share/man/man1
 
@@ -44,7 +42,6 @@ install:
 	# install man page
 	# install 	/usr/share/man/man1/video_queue.1
 
-# this is not used as brew uninstall is used instead
 clean:
 	rm -rf ${DEST_DIR}
 	rm $(BINDIR)/$(BINARY_NAME)
