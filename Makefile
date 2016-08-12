@@ -44,6 +44,7 @@ install:
 	# install man page
 	# install 	/usr/share/man/man1/video_queue.1
 
+# this is not used as brew uninstall is used instead
 clean:
 	rm -rf ${DEST_DIR}
 	rm $(BINDIR)/$(BINARY_NAME)
