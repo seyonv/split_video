@@ -26,10 +26,16 @@ BINDIR              = $(LOCAL)/bin
 MANDIR              = $(LOCAL)/share/man/man1
 
 # ****************************
-all: create_directories install
+all: create_temp_dir create_vides_file create_directories install
 
 create_directories:
-	touch $(VIDS_TO_DOWNLOAD)
+	${MKDIR_P}  ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
+
+create_temp_dir:
+	${MKDIR_P} ${TEMP_DIR}
+
+create_vids_file:
+	touch ${VIDS_TO_DOWNLOAD}
 
 install:
 	install $(SPLITTING_VIDEOS_SH) $(BINDIR)/$(BINARY_NAME)
