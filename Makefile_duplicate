@@ -5,7 +5,7 @@
 MKDIR_P             = mkdir -p
 TOUCH               = touch
 
-# ******************************
+# *****************************
 # replace dest_dir with
 DEST_DIR            = ${PREFIX}/video_queue_dir
 # DEST_DIR            = /usr/local/video_queue_dir
