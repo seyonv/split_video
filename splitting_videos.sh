@@ -20,7 +20,7 @@ split_this_video(){
 
   filename=$1
   time_to_split=$2
-  # could add error handling statement here to throw error if no argument is passed to function
+  # could add error handling statement here to throw error if no argument is passed to function.
   cd $download_loc
   cp $filename ../to_watch/$filename
   cd $move_to_loc
