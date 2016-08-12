@@ -1,20 +1,21 @@
 # #{prefix} stores /usr/local/Cellar/video_queue/1.0.8
-# modify makefile so that the directories are now stored there instead. don't want to explicitly specify version but have it automatically inferred via prefix
-# test implementation where prefix parameter does some bull shit thing that isn't actually useful
+# modify this to mimc the directory structure used by youtube-dl
+# bin/, share/,
 
 MKDIR_P             = mkdir -p
 TOUCH               = touch
 
 # *****************************
-# DEST_DIR             = /usr/local/video_queue_dir
+DEST_DIR             = /usr/local/video_queue_dir
 
-DOWNLOADED_DIR      = ${PREFIX}/downloaded
-TO_WATCH_DIR        = ${PREFIX}/to_watch
-WATCHED_DIR         = ${PREFIX}/watched
-VIDS_TO_DOWNLOAD    = ${PREFIX}/videos_to_download.txt
+
+TEMP_DIR						= ${PREFIX}/temp_dir
+DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
+TO_WATCH_DIR        = ${DEST_DIR}/to_watch
+WATCHED_DIR         = ${DEST_DIR}/watched
+VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
 
 # ****************************
-video_queue_DIR     = /usr/local/bin
 BINARY_NAME 				= video_queue1
 MANPAGE_NAME				= video_queue1.1
 SPLITTING_VIDEOS_SH = splitting_videos.sh
@@ -29,9 +30,7 @@ MANDIR              = $(LOCAL)/share/man/man1
 all: create_directories install
 
 create_directories:
-	${MKDIR_P} ${DOWNLOADED_DIR}
-	${MKDIR_P} ${TO_WATCH_DIR}
-	${MKDIR_P} ${WATCHED_DIR}
+	${MKDIR_P} ${PREFIX} ${DEST_DIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
 	touch $(VIDS_TO_DOWNLOAD)
 
 install:

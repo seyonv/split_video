@@ -29,7 +29,7 @@ MANDIR              = $(LOCAL)/share/man/man1
 all: create_directories install
 
 create_directories:
-  ${MKDIR_P} ${DEST_DIR}
+ 	${MKDIR_P} ${DEST_DIR}
   ${MKDIR_P} ${DOWNLOADED_DIR}
   ${MKDIR_P} ${TO_WATCH_DIR}
   ${MKDIR_P} ${WATCHED_DIR}
