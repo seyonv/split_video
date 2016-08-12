@@ -8,7 +8,6 @@ TOUCH               = touch
 # *****************************
 DEST_DIR             = /usr/local/video_queue_dir
 
-
 TEMP_DIR						= ${PREFIX}/temp_dir
 DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
 TO_WATCH_DIR        = ${DEST_DIR}/to_watch
