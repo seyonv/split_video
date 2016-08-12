@@ -26,7 +26,7 @@ BINDIR              = $(LOCAL)/bin
 MANDIR              = $(LOCAL)/share/man/man1
 
 # ****************************
-all: create_temp_dir create_vides_file create_directories install
+all: create_temp_dir create_vids_file create_directories install
 
 create_directories:
 	${MKDIR_P}  ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
