@@ -30,7 +30,6 @@ all: create_directories install
 
 create_directories:
 	touch $(VIDS_TO_DOWNLOAD)
-	${MKDIR_P}  ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
 
 install:
 	install $(SPLITTING_VIDEOS_SH) $(BINDIR)/$(BINARY_NAME)
