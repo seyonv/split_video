@@ -5,7 +5,7 @@
 MKDIR_P             = mkdir -p
 TOUCH               = touch
 
-# *****************************
+# ******************************
 DEST_DIR             = /usr/local/video_queue_dir
 
 TEMP_DIR						= ${PREFIX}/bin
