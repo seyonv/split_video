@@ -1,6 +1,5 @@
 # #{prefix} stores /usr/local/Cellar/video_queue/1.0.8
-# modify this to mimc the directory structure used by youtube-dl
-# bin/, share/,
+# Use prefix solely to store the two executables into cellar
 
 MKDIR_P             = mkdir -p
 TOUCH               = touch
@@ -9,10 +8,10 @@ TOUCH               = touch
 DEST_DIR             = /usr/local/video_queue_dir
 
 TEMP_DIR						= ${PREFIX}/bin
-DOWNLOADED_DIR      = ${TEMP_DIR}/downloaded
-TO_WATCH_DIR        = ${TEMP_DIR}/to_watch
-WATCHED_DIR         = ${TEMP_DIR}/watched
-VIDS_TO_DOWNLOAD    = ${TEMP_DIR}/videos_to_download.txt
+DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
+TO_WATCH_DIR        = ${DEST_DIR}/to_watch
+WATCHED_DIR         = ${DEST_DIR}/watched
+VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
 
 # ****************************
 BINARY_NAME 				= video_queue1
@@ -21,20 +20,15 @@ SPLITTING_VIDEOS_SH = splitting_videos.sh
 FFSPLIT_SH          = ffsplit.sh
 
 # ****************************
-LOCAL              = /usr/local
-BINDIR              = $(LOCAL)/bin
-MANDIR              = $(LOCAL)/share/man/man1
+LOCAL               = /usr/local
+BINDIR              = $(PREFIX)/bin
+MANDIR              = $(PREFIX)/share/man/man1
 
 # ****************************
-all: create_temp_dir create_vids_file create_directories install
+all: create_directories install
 
 create_directories:
-	${MKDIR_P}  ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
-
-create_temp_dir:
-	${MKDIR_P} ${TEMP_DIR}
-
-create_vids_file:
+	${MKDIR_P} ${TEMP_DIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
 	touch ${VIDS_TO_DOWNLOAD}
 
 install:
