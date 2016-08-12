@@ -11,7 +11,8 @@ TEMP_DIR						= ${PREFIX}/bin
 DOWNLOADED_DIR      = ${DEST_DIR}/downloaded
 TO_WATCH_DIR        = ${DEST_DIR}/to_watch
 WATCHED_DIR         = ${DEST_DIR}/watched
-VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
+# VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
+VIDS_TO_DOWNLOAD    = ${TEMP_DIR}/videos_to_download.txt
 
 # ****************************
 BINARY_NAME 				= video_queue1
