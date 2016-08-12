@@ -16,6 +16,7 @@ VIDS_TO_DOWNLOAD    = ${DEST_DIR}/videos_to_download.txt
 BINDIR              = $(PREFIX)/bin
 MANDIR              = $(PREFIX)/share/man/man1
 
+TO_REMOVE 					= /usr/local/cellar/video_queue
 # ****************************
 BINARY_NAME 				= video_queue1
 MANPAGE_NAME				= video_queue1.1
@@ -37,4 +38,5 @@ install:
 
 clean:
 	rm -rf ${DEST_DIR}
-	rm -rf ${PREFIX}
+	# rm -rf ${TO_REMOVE}
+	brew uninstall video_queue
