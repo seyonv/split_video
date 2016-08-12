@@ -35,9 +35,7 @@ create_directories:
 install:
 	install $(SPLITTING_VIDEOS_SH) $(BINDIR)/$(BINARY_NAME)
 	install $(FFSPLIT_SH) $(BINDIR)/ff_split
-	# sudo cp video_queue /usr/share/man/man1/video_queue.1
 	install $(MANPAGE_NAME) $(MANDIR)/$(MANPAGE_NAME)
-	# install man page
 	# install 	/usr/share/man/man1/video_queue.1
 
 clean:
