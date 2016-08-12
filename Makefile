@@ -30,7 +30,7 @@ MANDIR              = $(LOCAL)/share/man/man1
 all: create_directories install
 
 create_directories:
-	${MKDIR_P} ${PREFIX} ${DEST_DIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
+	${MKDIR_P} ${TEMP_DIR} ${DEST_DIR} ${DOWNLOADED_DIR} ${TO_WATCH_DIR} ${WATCHED_DIR}
 	touch $(VIDS_TO_DOWNLOAD)
 
 install:
